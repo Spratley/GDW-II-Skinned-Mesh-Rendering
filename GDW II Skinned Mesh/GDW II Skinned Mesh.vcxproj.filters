@@ -14,6 +14,7 @@
     <ClCompile Include="src\Graphics\VertexArrayObject.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="src\SkinnedMesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Graphics\IBuffer.h">
@@ -34,6 +35,8 @@
     <ClInclude Include="src\Graphics\VertexArrayObject.h">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="src\SkinnedMesh.h" />
+    <ClInclude Include="src\SimpleTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">

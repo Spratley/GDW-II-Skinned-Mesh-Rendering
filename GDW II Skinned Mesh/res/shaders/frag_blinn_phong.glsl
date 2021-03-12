@@ -17,8 +17,14 @@ uniform vec3  u_CamPos;
 
 out vec4 frag_color;
 
+// https://learnopengl.com/Advanced-Lighting/Advanced-Lighting
 void main() {
+	// Lecture 5
+	vec3 ambient = ((u_AmbientLightStrength * u_LightCol) + (u_AmbientCol * u_AmbientStrength));
+
+	// Diffuse
 	vec3 N = normalize(inNormal);
+	vec3 lightDir = normalize(u_LightPos - inPos);
 
 	float dif = max(dot(N, lightDir), 0.0);
 	vec3 diffuse = dif * u_LightCol;// add diffuse intensity

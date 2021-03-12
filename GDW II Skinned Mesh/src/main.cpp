@@ -18,6 +18,7 @@
 
 #pragma endregion Standard Graphics Code
 
+#include "SkinnedMesh.h"
 
 #define FOV 1.0472f
 #define ASPECT 1.0f
@@ -70,6 +71,9 @@ int main()
 #pragma endregion Standard Graphics Code
 
 	// INSERT LOADING SKINNED MESH HERE
+	GLTFSkinnedMesh mesh;
+	mesh.LoadFromFile("models/JellyCube.glb");
+	mesh.SetLooping(true);
 
 #pragma region Standard Graphics Code
 
@@ -105,8 +109,6 @@ int main()
 			glEnable(GL_DEPTH_TEST);
 			glEnable(GL_CULL_FACE);
 			glDepthFunc(GL_LEQUAL);
-	
-			// INSERT SAMPLING ANIMATION TIME HERE ;)
 
 			double currentFrame;
 			double lastFrame = glfwGetTime();
@@ -119,7 +121,6 @@ int main()
 
 				glfwPollEvents();
 				
-				// INSERT SKELETAL ANIMATION UPDATE HERE
 
 
 				// Clear the screen
@@ -129,6 +130,11 @@ int main()
 				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 				// INSERT SKELETAL ANIMATION RENDERING HERE
+
+				// Render our mesh!!
+				mesh.UpdateAnimation(mesh.GetAnimation(0), deltaTime);
+				glm::mat4 origin = glm::mat4(1.0f);
+				mesh.Draw(shader, cameraViewProjection, origin);
 
 				glfwSwapBuffers(window);
 				lastFrame = currentFrame;

@@ -113,6 +113,7 @@
     <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\VertexArrayObject.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\SkinnedMesh.cpp" />
     <ClCompile Include="src\Utilities\VertexTypes.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,6 +157,8 @@
     <ClInclude Include="src\Graphics\Shader.h" />
     <ClInclude Include="src\Graphics\VertexArrayObject.h" />
     <ClInclude Include="src\Graphics\VertexBuffer.h" />
+    <ClInclude Include="src\SimpleTransform.h" />
+    <ClInclude Include="src\SkinnedMesh.h" />
     <ClInclude Include="src\Utilities\VertexTypes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
